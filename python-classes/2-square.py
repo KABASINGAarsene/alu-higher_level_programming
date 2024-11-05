@@ -1,8 +1,15 @@
 #!/usr/bin/python3
 
 
-class Square:
+"""
+This code create an empty class.
+"""
 
+
+class Square:
+    """
+    This is an empty class
+    """
     def __init__(self, size=0):
         try:
             if not isinstance(size, int):
