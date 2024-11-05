@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 
 
-#This code creates an empty class
+"""
+This code create an empty class.
+"""
 
 
 class Square:
-
-   # This  class is empty
-    
+    """
+    This is an empty class
+    """
     pass
