@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-QASDCFRTYUJMKBVCWQAPLuhvbeijdskvniusahfweewijfewuhoiew
-MKIUYTREWSZXAWERTFVBNMKwefwefhiewojfwpefwe
-QWERTYUIOLKJHGFDSXCVBNMwefwoeijfiweojfewf weofijwef
+QASDCFRTYUJMKBVCWQAPLuhvbeijdskvniusah
+MKIUYTREWSZXAWERTFVBNMKwefw
+QWERTYUIOLKJHGFDSXCVBNMwefwo
 """
 
 
@@ -19,7 +19,7 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     """
-    MNBVEDCJfihvy78nwq9SOFIV3HYFCVNMKOLIUYTREWQAZ4V29Qgfdhbfdsgfshfsdfsds
+    MNBVEDCJfihvy78nwq9SOFIV3HYFCVNMKOLIUYTREWQAZ4V29Q
     """
     def __init__(self, width, height):
         # Validate width and height using integer_validator
