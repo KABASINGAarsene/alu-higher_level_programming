@@ -1,0 +1,22 @@
+>>> my_list = __import__('1-my_list').MyList  # Import the MyList class
+
+>>> my_list_obj = my_list()  # Create an instance of MyList
+
+>>> my_list_obj.append(10)   # Append some integers
+>>> my_list_obj.append(300)
+>>> my_list_obj.append(42)
+>>> my_list_obj.append(150)
+>>> my_list_obj.append(67)
+>>> my_list_obj.append(-12)  # Append negative integers
+>>> my_list_obj.append(150)
+>>> my_list_obj.append(-3)
+
+>>> my_list_obj  # Display the current state of the list
+[10, 300, 42, 150, 67, -12, 150, -3]
+
+>>> my_list_obj.print_sorted()  # Print the sorted version of the list
+[-12, -3, 10, 42, 67, 150, 150, 300]
+
+>>> my_list_obj = my_list()  # Create a new instance
+>>> my_list_obj  # This should be an empty list
+[]
