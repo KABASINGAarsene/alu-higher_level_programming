@@ -26,4 +26,10 @@ class MyList(list):
         Uses Python's built-in sorted() function to sort ult
         without modifying the original list order.
         """
-        print(sorted(self))
+         if not self:  # Check if the list is empty
+            print("The list is empty.")
+            return []
+
+        sorted_list = sorted(self)  # Sort the list
+        print(sorted_list)  # Print the sorted list
+        return sorted_list  # Return the sorted list
