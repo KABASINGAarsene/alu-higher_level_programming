@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Script to add all command-line arguments to a Python list,
+then save the list to a file as JSON.
+"""
+
 import sys
 from os import path
 
