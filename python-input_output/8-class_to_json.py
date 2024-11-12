@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Module to convert an object to a dictionary for JSON serialization.
 """
