@@ -1,10 +1,21 @@
 #!/usr/bin/python3
 """
-Module to convert an object to a dictionary for JSON serialization.
+kjhgfdswertyuiokmnbvcxsqweiq
+ytrewertyuiuytgfdsdfgh
+iuytreedfgy
 """
+
 
 def class_to_json(obj):
     """
-    Returns the dictionary description for JSON serialization of an object.
+    Returns the dictionary description with simple data structures
+    (list, dictionary, string, integer, and boolean)
+    for JSON serialization of an object.
+
+    Args:
+        obj: An instance of a class.
+
+    Returns:
+        dict: A dictionary representation of the object's attributes.
     """
-    return obj.__dict__
+    return obj.__dict__i_
