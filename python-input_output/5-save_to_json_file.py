@@ -1,19 +1,20 @@
 #!/usr/bin/python3
 """
-ffjdkfjghfjdkdfjghfjdkfjghfjdkfjghfj
-kdjfhdjkdfhgfhjdskdfjghfhdjskdfjhj
-oirutyreuiwieuryteywuie
+jtrtyuikmuytrfcvxfdsyuikxm
+ldirfytgdhjsdfhgeywuieurytyeuiufrye
+oxkmncbvncbvnsjedjfgfhdejwke
 """
-
 import json
 
-
 def save_to_json_file(my_obj, filename):
+
     """
-    oiujnccbvbnxncbvcnxmcnbvcncbvnxcbvcnxcnbvcnxcb
-    mcnbvcnxcbvcbnxcbxncb
-    oeirutyrueirutyruieoirutyruieo
+    JHGFDERTYUIKNV KYTREDFGUYT
+    MNBVCXRTY fdfyuiotfgh
+    jytreshgfrtyuiolkmnbvcd
     """
-    my_obj_json = json.dumps(my_obj)
-    with open(filename, "w") as file:
-        file.write(my_obj_json)
+    with open(filename, 'w') as f:
+        
+        if isinstance(my_obj, set):
+            my_obj = list(my_obj)
+        json.dump(my_obj, f)
