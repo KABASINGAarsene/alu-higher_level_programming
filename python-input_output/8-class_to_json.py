@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+!/usr/bin/python3
 """
 kjhgfdswertyuiokmnbvcxsqweiq
 ytrewertyuiuytgfdsdfgh
@@ -18,4 +18,4 @@ def class_to_json(obj):
     Returns:
         dict: A dictionary representation of the object's attributes.
     """
-    return obj.__dict__i_
+    return obj.__dict__  # Corrected this line_
