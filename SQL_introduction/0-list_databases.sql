@@ -1,1 +1,2 @@
+--Displaying tables
 show databases;
