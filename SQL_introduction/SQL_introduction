@@ -1,0 +1,2 @@
+-- creating a database 
+CREATE DATABASE  IF NOT EXIST hbtn_0C_0;
