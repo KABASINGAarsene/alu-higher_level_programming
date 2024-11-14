@@ -1,2 +1,2 @@
 --Displaying tables
-SHOW databases;
+SHOW databases
