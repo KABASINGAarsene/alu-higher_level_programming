@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """
-This script fetches the URL https://alu-intranet.hbtn.io/status
-using urllib and displays the body of the response.
+This script fetches the status of a given URL using urllib.
 """
 import urllib.request
 
 if __name__ == "__main__":
-    url = "https://alu-intranet.hbtn.io/status"
+    # Change URL as needed during testing
+    url = "http://0.0.0.0:5050/status"
 
-    # Using `with` statement to ensure proper resource management
+    # Fetch the URL and display the response
     with urllib.request.urlopen(url) as response:
         body = response.read()
         print("Body response:")
