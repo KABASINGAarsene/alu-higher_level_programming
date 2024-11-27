@@ -1,16 +1,12 @@
 #!/usr/bin/python3
 """
-This script fetches the status of a URL using urllib and displays the response body.
-The script prints:
-    - The type of the response body.
-    - The content of the body in bytes.
-    - The content decoded as a UTF-8 string.
-The URL can be changed to test different endpoints.
+This script fetches the status of the URL "https://alu-intranet.hbtn.io/status"
+using urllib and displays the response body in the required format.
 """
 import urllib.request
 
 # URL to fetch
-url = "http://0.0.0.0:5050/status"
+url = "https://alu-intranet.hbtn.io/status"
 
 # Fetch the URL using urllib
 with urllib.request.urlopen(url) as response:
