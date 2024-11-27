@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-This script fetches the status of a given URL using urllib and displays
-the response body with proper error handling.
+This script fetches the status of a given URL using urllib and displays the response body.
+It includes proper error handling to manage cases where the URL is unreachable or encounters an HTTP error.
 """
 import urllib.request
 import urllib.error
@@ -23,4 +23,3 @@ if __name__ == "__main__":
         print(f"HTTP Error: {e.code} - {e.reason}")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
-
