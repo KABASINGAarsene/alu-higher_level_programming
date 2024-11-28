@@ -1,18 +1,41 @@
 #!/usr/bin/python3
 """
-text_indentation - inserts newline into a text
-Requires a str input, otherwise raises errors
-Prints the result, no return value
+Defines a function that prints a text with 2 new lines
+after each of these characters: '.', '?', and ':'.
 """
-
 
 def text_indentation(text):
     """
-    Adds newlines to a string based on sep, and prints it
+    Prints a text with 2 new lines after each '.', '?', and ':'.
+
+    Args:
+        text (str): The input text to format and print.
+
+    Raises:
+        TypeError: If `text` is not a string.
+
+    Example:
+        >>> text_indentation("Hello. How are you? I'm fine: thanks.")
+        Hello.
+
+        How are you?
+
+        I'm fine:
+
+        thanks.
     """
-    if text is None or not isinstance(text, str) or len(text) < 0:
-        raise TypeError('text must be a string')
-    text = text.replace('.', '.\n\n')
-    text = text.replace('?', '?\n\n')
-    text = text.replace(':', ':\n\n')
-    print('\n'.join([line.strip() for line in text.split('\n')]), end="")
+    if not isinstance(text, str):
+        raise TypeError("text must be a string")
+
+    result = ""
+    skip_space = False
+    for char in text:
+        if skip_space and char == " ":
+            continue
+        skip_space = False
+        result += char
+        if char in ".?:":
+            result += "\n\n"
+            skip_space = True
+
+    print(result.strip())
