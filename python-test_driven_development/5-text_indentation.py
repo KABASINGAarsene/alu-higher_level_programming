@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Defines a function that prints a text with 2 new lines
-after each of these characters: '.', '?', and ':'.
+after each '.', '?', and ':'.
 """
 
 def text_indentation(text):
@@ -28,14 +28,12 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     result = ""
-    skip_space = False
     for char in text:
-        if skip_space and char == " ":
-            continue
-        skip_space = False
         result += char
         if char in ".?:":
             result += "\n\n"
-            skip_space = True
 
-    print(result.strip())
+    # Remove extra spaces before and after lines
+    lines = result.splitlines()
+    trimmed_lines = [line.strip() for line in lines]
+    print("\n".join(trimmed_lines))
