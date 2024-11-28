@@ -8,7 +8,7 @@ import sys
 
 # Get the URL from the command-line arguments
 url = sys.argv[1]
-
+#Entry point of the script
 if __name__ == "__main__":
 
     # fetch the URL using urllib
