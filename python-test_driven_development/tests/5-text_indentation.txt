@@ -1,6 +1,5 @@
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-# Test normal text
 >>> text_indentation("Hello. How are you? I'm fine: thank you.")
 Hello.
 
@@ -10,11 +9,9 @@ I'm fine:
 
 thank you.
 
-# Test without special characters
 >>> text_indentation("Hello there")
 Hello there
 
-# Test with extra spaces
 >>> text_indentation("Hello.   How are you?  I'm fine:   thank you.")
 Hello.
 
@@ -24,38 +21,26 @@ I'm fine:
 
 thank you.
 
-# Test empty string
 >>> text_indentation("")
 <BLANKLINE>
 
-# Test invalid input type
 >>> text_indentation(123)
 Traceback (most recent call last):
     ...
 TypeError: text must be a string
 
-# Test only special characters
 >>> text_indentation("...:::???")
 .
-
 .
-
 .
-
 :
-
 :
-
 :
-
+?
+?
 ?
 
-?
-
-?
-
-# Test text with newlines
 >>> text_indentation("Hello.\nHow are you?")
 Hello.
 
-How are you?
+How are you?`
