@@ -32,4 +32,3 @@ if __name__ == "__main__":
 
     # Print the value of the 'X-Request-Id'
     print(request_id)
-
