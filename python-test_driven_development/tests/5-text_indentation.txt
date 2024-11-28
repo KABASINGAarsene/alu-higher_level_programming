@@ -59,4 +59,3 @@ TypeError: text must be a string
 Hello.
 
 How are you?
-
