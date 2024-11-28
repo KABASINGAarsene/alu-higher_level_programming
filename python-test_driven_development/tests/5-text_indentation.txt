@@ -1,31 +1,62 @@
->>> print_square = __import__("4-print_square").print_square
->>> module_documentation = __import__("4-print_square").__doc__
->>> print(len(module_documentation) > 0)
-True
+>>> text_indentation = __import__('5-text_indentation').text_indentation
 
->>> function_documentation = __import__("4-print_square").print_square.__doc__
->>> print(len(function_documentation) > 0)
-True
->>> print_square(4)
-####
-####
-####
-####
->>> print_square(0)
- 
->>> print_square("checker")
+# Test normal text
+>>> text_indentation("Hello. How are you? I'm fine: thank you.")
+Hello.
+
+How are you?
+
+I'm fine:
+
+thank you.
+
+# Test without special characters
+>>> text_indentation("Hello there")
+Hello there
+
+# Test with extra spaces
+>>> text_indentation("Hello.   How are you?  I'm fine:   thank you.")
+Hello.
+
+How are you?
+
+I'm fine:
+
+thank you.
+
+# Test empty string
+>>> text_indentation("")
+<BLANKLINE>
+
+# Test invalid input type
+>>> text_indentation(123)
 Traceback (most recent call last):
-...
-TypeError: size must be an integer
->>> print_square(1.1)
-Traceback (most recent call last):
-...
-TypeError: size must be an integer
->>> print_square(-1)
-Traceback (most recent call last):
-...
-ValueError: size must be >= 0
->>> print_square(-9.2)
-Traceback (most recent call last):
-...
-TypeError: size must be an integer
+    ...
+TypeError: text must be a string
+
+# Test only special characters
+>>> text_indentation("...:::???")
+.
+
+.
+
+.
+
+:
+
+:
+
+:
+
+?
+
+?
+
+?
+
+# Test text with newlines
+>>> text_indentation("Hello.\nHow are you?")
+Hello.
+
+How are you?
+
