@@ -8,29 +8,35 @@ Usage:
     ./3-error_code.py <URL>
 
 Modules:
-    urllib.request - For sending HTTP requests.
-    urllib.error - For managing HTTP errors.
-    sys - For handling command-line arguments.
+    urllib.request - Used to send the HTTP request and fetch the response.
+    urllib.error - Used to handle HTTPError exceptions and print error codes.
+    sys - Used to retrieve the URL argument from the command-line input.
 
 Exceptions:
-    Handles urllib.error.HTTPError and prints the error code.
+    Handles urllib.error.HTTPError and prints the error code associated 
+    with the HTTP request failure.
 
 Requirements:
-    - Must handle HTTPError exceptions.
-    - Use only urllib and sys.
-    - Must use the 'with' statement for making the request.
+    - The script must handle HTTPError exceptions.
+    - Only the `urllib` and `sys` packages are allowed.
+    - The script must use the `with` statement to handle the HTTP request.
 """
+
 import urllib.request
 import urllib.error
 import sys
 
 def fetch_url(url):
     """
-    This function takes a URL, sends a GET request, and displays the response body.
-    If an HTTPError occurs, it will print the error code.
+    Sends a GET request to the provided URL and prints the body of the response.
+    If an HTTPError occurs, it prints the error code.
 
     Args:
         url (str): The URL to send the GET request to.
+
+    Raises:
+        HTTPError: If the server returns an error response, this exception is caught 
+                   and the error code is printed.
     """
     try:
         # Open the URL and read the response
