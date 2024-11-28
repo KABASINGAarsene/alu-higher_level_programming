@@ -1,18 +1,26 @@
 #!/usr/bin/python3
 """
-This is module documentation. feafywefiuwe fwehfw
-wewuewhr weghquwheqw rbhqwiuhqwheqw afhiwqheqwe
+cnsuivjweo washcwiuasv wdasvweav
+wsafwnisafuhSAFJNASF EASFASF
+ASFASFNWESAF ASDFIJNSAd fwasg
 """
 
 
-import requests
+import urllib.request
+import urllib.error
+import sys
 
+def fetch_url(url):
+    try:
+        # Open the URL and read the response
+        with urllib.request.urlopen(url) as response:
+            body = response.read().decode('utf-8')
+            print(body)
+    except urllib.error.HTTPError as e:
+        # Handle HTTP errors and print the error code
+        print(f"Error code: {e.code}")
 
 if __name__ == "__main__":
-    """
-    Send a GET request to the specified URL
-    """
-    response = requests.get("https://alu-intranet.hbtn.io/status")
-
-    # Display the body of the response with tabulation
-    print(f"Body response:\n\t{response.text}")
+    # Read the URL from the command-line arguments
+    url = sys.argv[1]
+    fetch_url(url)
