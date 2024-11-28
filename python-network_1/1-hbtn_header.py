@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This is the module dodumentation. And it is hot. jnasfie fbweasf sbfasfbasfbsbf
+This script takes in a URL, sends a request to the URL, and displays the value
+of the 'X-Request-Id' variable found in the header of the response.
 """
 import urllib.request
 import sys
@@ -9,10 +10,11 @@ import sys
 url = sys.argv[1]
 
 if __name__ == "__main__":
-    # Send a request to the URL and fetch the response
+
+    # fetch the URL using urllib
     with urllib.request.urlopen(url) as response:
-        # Extract the value of the X-Request-Id from the headers
-        x_request_id = response.headers.get('X-Request-Id')
+        # Get the value of the 'X-Request-ID' header
+        request_id = response.headers.get('X-Request-Id')
     
-    # Display the value of the X-Request-Id variable
-    print(x_request_id)
+    # print the value of the 'X-Request-Id'
+    print(request_id)
