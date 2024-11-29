@@ -1,76 +1,82 @@
 #!/usr/bin/python3
-"""Contains classes for working with Polygons.
 """
-from .rectangle import Rectangle
+This is the module documentation. The module create a class square
+"""
+
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Represents a polygon with 4 perpendicular and
-    equal sides.
+    """
+    Represents a square, inheriting from Rectangle.
     """
 
     def __init__(self, size, x=0, y=0, id=None):
-        """Initializes a new square object.
+        """
+        Initialize a new Square instance.
+
         Args:
-            size (int): The width and height of this square.
-            x (int): The horizontal position of this square.
-            y (int): The vertical position of this square.
-            id (int): The id of this square.
+            size (int): The size of the square (same for width and height).
+            x (int): The x-coordinate (default: 0).
+            y (int): The y-coordinate (default: 0).
+            id (int): An optional ID for the instance.
         """
         super().__init__(size, size, x, y, id)
 
+    def __str__(self):
+        """
+        Return a string representation of the Square.
+        """
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
+
     @property
     def size(self):
-        """Gets or sets the size of this square.
+        """
+        Get the size of the square.
         """
         return self.width
 
     @size.setter
     def size(self, value):
-        """Gets or sets the size of this square.
+        """
+        Set the size of the square.
         """
         self.width = value
         self.height = value
 
-    def __str__(self):
-        """Creates a string representation of this Square.
-        Returns:
-            str: A string representation of this Square
-        """
-        sides = (
-            self.id,
-            self.x,
-            self.y,
-            self.width
-        )
-        res = '[Square] ({}) {:d}/{:d} - {:d}'.format(
-            sides[0], sides[1], sides[2], sides[3]
-        )
-        return res
-
     def update(self, *args, **kwargs):
-        """Updates the attributes of this Square
-        Args:
-            args (tuple): A tuple of non-keyword arguments.
-            kwargs (dict): A dictionary of keyword arguments.
         """
-        attrs = ('id', 'size', 'x', 'y')
-        for key, val in zip(attrs, args):
-            setattr(self, key, val)
-        if (type(args) is None or len(args) == 0) and (type(kwargs) is dict):
-            for key, val in kwargs.items():
-                if key in attrs:
-                    setattr(self, key, val)
+        Update attributes of the square.
+        Args:
+            *args: Non-keyword arguments assigned in order:
+                1st -> id
+                2nd -> size
+                3rd -> x
+                4th -> y
+            **kwargs: Key-value pairs for attributes to update.
+                Ignored if *args exists and is not empty.
+        """
+        # Handle *args if present
+        if args:
+            attributes = ['id', 'size', 'x', 'y']
+            for i, arg in enumerate(args):
+                if i < len(attributes):
+                    setattr(self, attributes[i], arg)
+        # Handle **kwargs if *args is empty
+        else:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
 
     def to_dictionary(self):
-        """Creates a dictionary representation of this Square.
-        Returns:
-            dict: A dictionary representation of this Square.
         """
-        res = {
+        Return the dictionary representation of the Square.
+        Returns:
+            dict: A dictionary containing the attributes of the square.
+        """
+        return {
             'id': self.id,
             'size': self.size,
             'x': self.x,
             'y': self.y
         }
-        return res
