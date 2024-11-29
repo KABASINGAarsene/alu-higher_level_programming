@@ -1,18 +1,27 @@
 #!/usr/bin/python3
 """
-basic interaction with github API
+This is a module documentation. sdbhsaudsad
+asfasfnasfbashfasfsa sajfsafsfs sfdsfdfdsg
 """
+
+
 import requests
 import sys
-from requests.auth import HTTPBasicAuth
 
 
 if __name__ == "__main__":
-    try:
-        username = sys.argv[1]
-        password = sys.argv[2]
-        url = 'https://api.github.com/users/' + username
-        r = requests.get(url, auth=HTTPBasicAuth(username, password))
-        print(r.json()['id'])
-    except:
+    username = sys.argv[1]
+    token = sys.argv[2]
+
+    # GitHub API URL to get user information
+    url = "https://api.github.com/user"
+
+    # Send a GET request with Basic Authentication
+    response = requests.get(url, auth=(username, token))
+
+    if response.status_code == 200:
+        # Parse the JSON response and print the user ID
+        print(response.json().get("id"))
+    else:
+        # If authentication fails or user is not found, print None
         print("None")
