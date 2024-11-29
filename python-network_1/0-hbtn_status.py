@@ -1,15 +1,16 @@
 #!/usr/bin/python3
-"""
-Simple Python script that fetches https://intranet.hbtn.io/status
-"""
+"""  fetches https://alu-intranet.hbtn.io/status  """
 import urllib.request
 
+url = 'https://intranet.hbtn.io/status'
+if url.startswith('https://'):
+    url = "https://alu-intranet.hbtn.io/status"
+
 if __name__ == "__main__":
-    url = 'https://alu-intranet.hbtn.io/status'
-    with urllib.request.urlopen(url) as response:
-        content = response.read()
-        content_type = type(content)
-        utf_content = content.decode('utf-8')
-        print("Body response:\n\t- type: {}".format(content_type))
-        print("\t- content: {}".format(content))
-        print("\t- utf8 content: {}".format(utf_content))
+    request = urllib.request.Request(url)
+    with urllib.request.urlopen(request) as resp:
+        content = resp.read()
+        print("Body response:")
+        print("\t- type:", type(content))
+        print("\t- content:", content)
+        print("\t- utf8 content:", content.decode("utf-8"))
