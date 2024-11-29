@@ -1,20 +1,23 @@
 #!/usr/bin/python3
 """
-Searches the given url for an id and name based on q
-q is just a server-side variable set up to generate a random JSON name-id pair
+This is the module documentation.sajsahf sasafsafs
+safsafusifjw fqhwuhqwr qwgasuhfq asfewgqwrfwrw
 """
-import requests
-import sys
 
+
+import requests
+from sys import argv
 
 if __name__ == "__main__":
-    try:
-        letter = sys.argv[1]
-    except:
-        letter = ""
-    url = "http://0.0.0.0:5000/search_user"
-    r = requests.post(url, data={"q": letter}).json()
-    if r == {}:
-        print("No result")
+    json = {'q': ""}
+    if len(argv) > 1:
+        json['q'] = argv[1]
+    response = requests.post("http://0.0.0.0:5000/search_user", json)
+    if "json" not in response.headers.get('content-type'):
+        print("Not a valid JSON")
     else:
-        print("[{}] {}".format(r['id'], r['name']))
+        if response.json():
+            print("[{}] {}".format(response.json().get('id'),
+                  response.json().get('name')))
+        else:
+            print("No result")
