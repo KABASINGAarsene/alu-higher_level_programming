@@ -1,18 +1,28 @@
->>> say_my_name = __import__("3-say_my_name").say_my_name
->>> module_documentation = __import__("3-say_my_name").__doc__
->>> print(len(module_documentation) > 0)
-True
+>>> say_my_name = __import__('3-say_my_name').say_my_name
 
->>> function_documentation = __import__("3-say_my_name").say_my_name.__doc__
->>> print(len(function_documentation) > 0)
-True
->>> say_my_name("Holberton", "School")
-My name is Holberton School
->>> say_my_name("Slim Shady")
-My name is Slim Shady 
->>> say_my_name("","")
-My name is  
->>> say_my_name(1, 2)
-Traceback (most recent call last):
-...
+>>> say_my_name("Gaddiel", "Irakoze")
+My name is Gaddiel Irakoze
+
+>>> try:
+...     say_my_name("Dodi", 2)
+... except Exception as e:
+...     print(f"TypeError: {e}")
+TypeError: last_name must be a string
+
+>>> try:
+...     say_my_name(87, "Toto")
+... except Exception as e:
+...     print(f"TypeError: {e}")
 TypeError: first_name must be a string
+
+>>> try:
+...     say_my_name(87, 55)
+... except Exception as e:
+...     print(f"TypeError: {e}")
+TypeError: first_name must be a string
+
+>>> try:
+...     say_my_name()
+... except Exception as e:
+...     print(f"TypeError: {e}")
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
