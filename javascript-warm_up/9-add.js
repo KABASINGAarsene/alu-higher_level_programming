@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-function add(a, b) {
+function add (a, b) { // Added space after function name
   return a + b;
 }
 
